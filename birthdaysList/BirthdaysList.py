@@ -1,4 +1,5 @@
-import datetime, random
+import datetime
+import random
 
 
 class BirthdayList:
@@ -9,7 +10,7 @@ class BirthdayList:
     def getBirthdays(self):
         startOfYear = datetime.date(2001, 1, 1)
 
-        for i in self.numerOfChoice:
+        for i in range(self.numberOfChoice):
             randomBirthday = datetime.timedelta(random.randint(0, 364))
             self.birthdays.append(startOfYear + randomBirthday)
 
@@ -24,3 +25,4 @@ class BirthdayList:
             for b, birthdayB in enumerate(self.birthdays[a + 1 :]):
                 if birthdayA == birthdayB:
                     return  birthdayA
+
