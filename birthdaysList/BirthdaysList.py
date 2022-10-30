@@ -3,14 +3,14 @@ import random
 
 
 class BirthdayList:
-    def __init__(self, numberOfChoice):
+    def __init__(self):
         self.birthdays = []
-        self.numberOfChoice = numberOfChoice
 
-    def getBirthdays(self):
+
+    def getBirthdays(self, numberOfChoice):
         startOfYear = datetime.date(2001, 1, 1)
 
-        for i in range(self.numberOfChoice):
+        for i in range(numberOfChoice):
             randomBirthday = datetime.timedelta(random.randint(0, 364))
             self.birthdays.append(startOfYear + randomBirthday)
 
@@ -25,4 +25,7 @@ class BirthdayList:
             for b, birthdayB in enumerate(self.birthdays[a + 1 :]):
                 if birthdayA == birthdayB:
                     return  birthdayA
+
+    def clearBirhdays(self):
+        self.birthdays = []
 
